@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import classes from './App.module.scss'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './hoc/Layout/Layout'
+import Main from './pages/Main'
+import SwimmingPool from './pages/SwimmingPool'
+import Playground from './pages/Playground'
+import Tariffs from './pages/Tariffs'
+import Contacts from './pages/Contacts'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.wrapper}>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path='swimming-pool' element={<SwimmingPool />} />
+          <Route path='playground' element={<Playground />} />
+          <Route path='tariffs' element={<Tariffs />} />
+          <Route path='contacts' element={<Contacts />} />
+          <Route path='*' element={<Main />} />
+        </Route>
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
