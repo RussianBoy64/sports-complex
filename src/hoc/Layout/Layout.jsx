@@ -1,15 +1,11 @@
 import React from 'react'
-import classes from './Layout.module.scss'
 import { Outlet } from 'react-router-dom'
-import Navbar from '../../components/Navbar/Navbar'
+import Header from '../../components/Header/Header'
 
 function Layout() {
   return (
     <>
-      <header>
-        <h2>Header</h2>
-        <Navbar />
-      </header>
+      <Header />
       <main>
         <Outlet />
       </main>

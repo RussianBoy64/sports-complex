@@ -6,7 +6,7 @@ const links = [
   { to: '/', text: 'Главная' },
   { to: '/swimming-pool', text: 'Бассейн' },
   { to: '/playground', text: 'Зал' },
-  { to: '/tariffs', text: 'Таррифы' },
+  { to: '/tariffs', text: 'Тарифы' },
   { to: '/contacts', text: 'Контакты' },
 ]
 
