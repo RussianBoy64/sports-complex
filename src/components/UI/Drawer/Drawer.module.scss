@@ -1,0 +1,45 @@
+.drawer {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  padding: 7rem 5rem 3rem;
+  background-color: #e6e6e6;
+  overflow-y: scroll;
+
+  &_show {
+    animation: drawer-show 300ms ease-out forwards;
+  }
+
+  &_hide {
+    animation: drawer-hide 300ms ease-in forwards;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .drawer {
+    width: 100%;
+  }
+}
+
+@keyframes drawer-show {
+  0% {
+    right: -100%;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes drawer-hide {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -100%;
+  }
+}

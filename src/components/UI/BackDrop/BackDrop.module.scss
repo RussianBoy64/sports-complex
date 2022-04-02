@@ -1,0 +1,34 @@
+.backDrop {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  &_show {
+    animation: show-backDrop 300ms ease-in forwards;
+  }
+  &_hide {
+    animation: hide-backDrop 300ms ease-in forwards;
+  }
+}
+
+@keyframes show-backDrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-backDrop {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

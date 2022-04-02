@@ -3,19 +3,24 @@ import classes from './Header.module.scss'
 import { FiPhone } from 'react-icons/fi'
 import Navbar from '../Navbar/Navbar'
 import Logo from '../Logo/Logo'
+import MenuToggle from '../UI/MenuToggle/MenuToggle'
 
-function Header() {
+function Header({ isPortable, isNavbarOpen, navbarToggle, navbarClose }) {
   return (
     <header className={classes.header}>
       <Logo />
-      <Navbar />
-
-      <a href='tel:+78452493306'>
-        <span>
-          <FiPhone />
-        </span>
-        49-33-06
-      </a>
+      {!isPortable && (
+        <>
+          <Navbar navbarClose={navbarClose} />
+          <a href='tel:+78452493306' className={classes.phoneLink}>
+            <FiPhone className={classes.icon} />
+            49-33-06
+          </a>
+        </>
+      )}
+      {isPortable && (
+        <MenuToggle isNavbarOpen={isNavbarOpen} navbarToggle={navbarToggle} />
+      )}
     </header>
   )
 }

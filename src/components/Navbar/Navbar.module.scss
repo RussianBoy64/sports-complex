@@ -1,5 +1,7 @@
 .nav {
-  display: flex;
+  &__list {
+    display: flex;
+  }
 
   &__link {
     display: inline-block;
@@ -34,4 +36,18 @@
 
 [aria-current='page'] {
   color: var(--text-secondary);
+}
+
+@media only screen and (max-width: 790px) {
+  .nav {
+    &__list {
+      flex-direction: column;
+      line-height: 3rem;
+    }
+
+    &__link {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }

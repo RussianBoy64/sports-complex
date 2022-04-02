@@ -9,9 +9,7 @@ const container = document.getElementById('root')
 const root = ReactDOMClient.createRoot(container)
 
 root.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <App />
+  </Router>
 )
