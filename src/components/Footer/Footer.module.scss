@@ -1,0 +1,21 @@
+.footer {
+  width: 100%;
+  min-height: 3rem;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  background: var(--text-secondary);
+  color: var(--bg);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+.copyRight {
+  grid-column: 1/4;
+  font-size: 0.5rem;
+  font-weight: 300;
+  text-align: center;
+}

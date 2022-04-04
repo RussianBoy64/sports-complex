@@ -11,6 +11,10 @@
   /* text */
   --font-size: 16px;
 
+  /* container size */
+  --lg: 0 1rem;
+  --sm: 0 0.6rem;
+
   /* transition */
   --transition: all 300ms ease-in-out;
 }
@@ -45,6 +49,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg);
   scroll-behavior: smooth;
+}
 
-  transition: var(--transition);
+main {
+  margin-top: 3rem;
+}
+
+.container {
+  width: 100%;
+  padding: var(--lg);
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: var(--sm);
+  }
 }

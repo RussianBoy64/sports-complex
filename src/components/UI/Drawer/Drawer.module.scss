@@ -8,6 +8,7 @@
   padding: 7rem 5rem 3rem;
   background-color: #e6e6e6;
   overflow-y: scroll;
+  transition: var(--transition);
 
   &_show {
     animation: drawer-show 300ms ease-out forwards;

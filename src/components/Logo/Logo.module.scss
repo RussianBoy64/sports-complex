@@ -3,7 +3,14 @@
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-weight: 800;
+}
+
+.default {
   background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.light {
+  color: var(--bg);
 }

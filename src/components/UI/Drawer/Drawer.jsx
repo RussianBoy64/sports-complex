@@ -4,11 +4,8 @@ import Navbar from '../../Navbar/Navbar'
 import classes from './Drawer.module.scss'
 
 function Drawer({ isNavbarOpen, navbarClose }) {
-  const nodeRef = React.useRef(null)
-
   return (
     <CSSTransition
-      ref={nodeRef}
       in={isNavbarOpen}
       timeout={300}
       classNames={{
