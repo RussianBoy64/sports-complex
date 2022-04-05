@@ -1,27 +1,28 @@
 import React from 'react'
-import Logo from '../Logo/Logo'
 import classes from './Footer.module.scss'
 import FooterInfo from './FooterInfo/FooterInfo'
 import LinkList from './LinkList/LinkList'
 
 const NAVIGATION_LINKS = {
   header: 'Карта сайта',
+  isExternal: false,
   links: [
     {
-      to: 'http://localhost:3000/',
+      to: '/',
       name: 'Главная',
     },
     {
-      to: 'http://localhost:3000/swimming-pool',
+      to: '/swimming-pool',
       name: 'Бассейн',
     },
-    { to: 'http://localhost:3000/playground', name: 'Зал' },
-    { to: 'http://localhost:3000/tariffs', name: 'Тарифы' },
-    { to: 'http://localhost:3000/contacts', name: 'Контакты' },
+    { to: '/playground', name: 'Зал' },
+    { to: '/tariffs', name: 'Тарифы' },
+    { to: '/contacts', name: 'Контакты' },
   ],
 }
 const HELPFULL_LINKS = {
   header: 'Полезные ссылки',
+  isExternal: true,
   links: [
     {
       to: 'https://www.saratovmer.ru/',
@@ -43,9 +44,15 @@ function Footer() {
 
         <LinkList
           header={NAVIGATION_LINKS.header}
+          isExternal={NAVIGATION_LINKS.isExternal}
           links={NAVIGATION_LINKS.links}
         />
-        <LinkList header={HELPFULL_LINKS.header} links={HELPFULL_LINKS.links} />
+
+        <LinkList
+          header={HELPFULL_LINKS.header}
+          isExternal={HELPFULL_LINKS}
+          links={HELPFULL_LINKS.links}
+        />
         <p className={classes.copyRight}>
           &#169; Сайт создал Владимир Козлачков. Все права защищены.
         </p>

@@ -22,15 +22,30 @@ function FooterInfo() {
           </a>
         </p>
         <div className={classes.footerInfo__messengers}>
-          <span className={classes.footerInfo__messengers__item}>
-            <FaWhatsapp />
-          </span>
-          <span className={classes.footerInfo__messengers__item}>
-            <FaTelegramPlane />
-          </span>
-          <span className={classes.footerInfo__messengers__item}>
-            <FaViber />
-          </span>
+          <a
+            href='https://wa.me/79270507940'
+            className={classes.footerInfo__messengers__item}
+          >
+            <span>
+              <FaWhatsapp />
+            </span>
+          </a>
+          <a
+            href='https://t.me/vld_k64'
+            className={classes.footerInfo__messengers__item}
+          >
+            <span>
+              <FaTelegramPlane />
+            </span>
+          </a>
+          <a
+            href='viber://chat?number=%2B79270507940'
+            className={classes.footerInfo__messengers__item}
+          >
+            <span>
+              <FaViber />
+            </span>
+          </a>
         </div>
       </div>
     </div>

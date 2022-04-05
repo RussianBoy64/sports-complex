@@ -2,7 +2,8 @@
   position: fixed;
   z-index: 1000;
   width: 100%;
-  padding: 0 1rem;
+  max-width: 1440px;
+  padding: var(--lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,6 +28,6 @@
 
 @media only screen and (max-width: 500px) {
   .header {
-    padding: 0 0.6rem;
+    padding: var(--sm);
   }
 }
