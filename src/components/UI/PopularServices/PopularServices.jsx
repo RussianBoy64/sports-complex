@@ -16,7 +16,6 @@ function PopularServices() {
       spaceBetween={50}
       slidesPerView={1}
       effect='fade'
-      fadeEffect={{ crossFade: true }}
       pagination={{
         clickable: true,
         horizontalClass: 'swiper-pagination_vertical',
@@ -27,10 +26,24 @@ function PopularServices() {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide>
+        <div className='swiper-slide__image__container'>
+          <img className='swiper-slide__image' src='#' alt='image1' />
+        </div>
+        <h3>Абонемент в бассейн (взрослый)</h3>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='swiper-slide__image__container'>
+          <img className='swiper-slide__image' src='#' alt='image2' />
+        </div>
+        <h3>Абонемент в бассейн (десткий)</h3>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='swiper-slide__image__container'>
+          <img className='swiper-slide__image' src='#' alt='image3' />
+        </div>
+        <h3>Аренда игрового зала</h3>
+      </SwiperSlide>
     </Swiper>
   )
 }
