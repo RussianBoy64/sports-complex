@@ -1,14 +1,23 @@
 .swiper {
-  position: relative;
+  position: absolute;
   z-index: 5;
+  left: 50%;
+  transform: translate(-50%, -3rem);
   width: 80%;
-  max-width: 45rem;
+  max-width: 40rem;
   color: var(--text-primary);
   background: var(--bg);
   border-radius: 1.5rem;
   padding: 2rem 1rem;
   transition: var(--transition);
   overflow: visible;
+  // box-shadow: 4px 13px 30px 1px #d7e4e8af;
+
+  &__container {
+    position: relative;
+    height: 10rem;
+    background: var(--text-secondary);
+  }
 
   @media screen and (max-width: 768px) {
     width: 90%;
@@ -17,18 +26,14 @@
   &-pagination {
     position: absolute;
     z-index: 21;
-    right: 1rem;
-    width: 0.5rem;
+    left: 50%;
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 8rem;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &_vertical {
-      flex-direction: column;
-    }
+    gap: 0.3rem;
 
     &-clickable {
       cursor: pointer;
@@ -48,17 +53,9 @@
         opacity: 1;
         background: var(--text-secondary);
         box-shadow: 0px 0px 20px rgba(56, 192, 252, 0.3);
-        height: 1.2rem;
+        width: 1.3rem;
       }
     }
-  }
-
-  .pagination_vertical {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    width: fit-content;
   }
 
   &-slide {
@@ -74,16 +71,46 @@
       }
     }
 
-    &__image__container {
+    &__image {
       position: absolute;
-      top: -4rem;
+      z-index: 100;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      height: 4rem;
-      border-radius: 1rem;
-      background: linear-gradient(45deg, var(--text-secondary), var(--accient));
-      opacity: 1;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &__container {
+        position: absolute;
+        top: -8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 12rem;
+        border-radius: 1rem;
+        background: linear-gradient(45deg, #34cff3, var(--text-secondary));
+        overflow: hidden;
+        opacity: 1;
+        box-shadow: 4px 13px 30px 1px #06afd551;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 9000;
+          background: linear-gradient(45deg, #34cff3, var(--text-secondary));
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &__title {
+      margin-top: 7.5rem;
+      text-align: center;
     }
   }
 }

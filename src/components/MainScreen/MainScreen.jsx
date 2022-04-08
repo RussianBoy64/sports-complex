@@ -1,5 +1,4 @@
 import React from 'react'
-import PopularServices from '../UI/PopularServices/PopularServices'
 import classes from './MainScreen.module.scss'
 
 function MainScreen() {
@@ -12,7 +11,6 @@ function MainScreen() {
             им. Героя России Исаева Н.В.
           </h3>
         </div>
-        <PopularServices />
       </div>
     </section>
   )
