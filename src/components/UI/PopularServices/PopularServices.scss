@@ -11,7 +11,6 @@
   padding: 2rem 1rem;
   transition: var(--transition);
   overflow: visible;
-  // box-shadow: 4px 13px 30px 1px #d7e4e8af;
 
   &__container {
     position: relative;
@@ -28,7 +27,7 @@
     z-index: 21;
     left: 50%;
     text-align: center;
-    top: 8rem;
+    top: 7.5rem;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -59,6 +58,11 @@
   }
 
   &-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
     [class*='duplicate'] > *,
     > * {
       opacity: 0;
@@ -68,6 +72,10 @@
     &-active {
       > * {
         opacity: 1;
+      }
+
+      .swiper-slide__image__container {
+        box-shadow: 4px 13px 30px 1px #06afd57c;
       }
     }
 
@@ -92,7 +100,6 @@
         background: linear-gradient(45deg, #34cff3, var(--text-secondary));
         overflow: hidden;
         opacity: 1;
-        box-shadow: 4px 13px 30px 1px #06afd551;
 
         &::after {
           content: '';
@@ -108,9 +115,28 @@
       }
     }
 
-    &__title {
-      margin-top: 7.5rem;
+    &__content {
+      margin-top: 6.5rem;
       text-align: center;
+      width: 90%;
+    }
+
+    &__title {
+      font-size: clamp(1rem, 1.3rem, 1.7rem);
+    }
+
+    &__subtitle {
+      margin-top: 0.2rem;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    &__description {
+      margin-top: 0.5rem;
+
+      @media screen and (min-width: 768px) {
+        padding: 0 10%;
+      }
     }
   }
 }

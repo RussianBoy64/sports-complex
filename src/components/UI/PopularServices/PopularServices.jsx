@@ -13,6 +13,32 @@ import pic1 from '../../../img/swimming.jpg'
 import pic2 from '../../../img/swimming-kids.jpg'
 import pic3 from '../../../img/playground.jpg'
 
+const services = [
+  {
+    img: pic1,
+    imgAlt: 'Плавание',
+    title: 'Абонемент в бассейн',
+    subtitle: 'взрослый',
+    description: 'Плавание в большой ванне бассейна - 45 минут',
+  },
+  {
+    img: pic2,
+    imgAlt: 'Плавание для детей',
+    title: 'Абонемент в бассейн',
+    subtitle: 'десткий',
+    description:
+      'Групповые занятия по обучению плаванию детей в малой ванне бассейна - 45 минут',
+  },
+  {
+    img: pic3,
+    imgAlt: 'Игровой зал',
+    title: 'Аренда зала',
+    subtitle: 'игровые виды спорта',
+    description:
+      'Предоставление спортивного зала для занятия игровыми видами спорта - 1 час',
+  },
+]
+
 function PopularServices() {
   return (
     <section>
@@ -28,31 +54,29 @@ function PopularServices() {
           // autoplay={{ delay: 5000 }}
           loop={true}
           mousewheel={true}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>
-            <div className='swiper-slide__image__container'>
-              <img className='swiper-slide__image' src={pic1} alt='image1' />
-            </div>
-            <h3 className='swiper-slide__title'>
-              Абонемент в бассейн (взрослый)
-            </h3>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className='swiper-slide__image__container'>
-              <img className='swiper-slide__image' src={pic2} alt='image2' />
-            </div>
-            <h3 className='swiper-slide__title'>
-              Абонемент в бассейн (десткий)
-            </h3>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className='swiper-slide__image__container'>
-              <img className='swiper-slide__image' src={pic3} alt='image3' />
-            </div>
-            <h3 className='swiper-slide__title'>Аренда игрового зала</h3>
-          </SwiperSlide>
+          {services.map((service, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <div className='swiper-slide__image__container'>
+                  <img
+                    className='swiper-slide__image'
+                    src={service.img}
+                    alt={service.imgAlt}
+                  />
+                </div>
+                <div className='swiper-slide__content'>
+                  <h3 className='swiper-slide__title'>{service.title}</h3>
+                  <h4 className='swiper-slide__subtitle'>{service.subtitle}</h4>
+                  <p className='swiper-slide__description'>
+                    {service.description}
+                  </p>
+                </div>
+              </SwiperSlide>
+            )
+          })}
         </Swiper>
       </div>
     </section>
