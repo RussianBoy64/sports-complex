@@ -12,6 +12,7 @@ import './PopularServices.scss'
 import pic1 from '../../../img/swimming.jpg'
 import pic2 from '../../../img/swimming-kids.jpg'
 import pic3 from '../../../img/playground.jpg'
+import Waves from '../Waves/Waves'
 
 const services = [
   {
@@ -79,6 +80,7 @@ function PopularServices() {
           })}
         </Swiper>
       </div>
+      <Waves />
     </section>
   )
 }

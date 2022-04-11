@@ -1,0 +1,22 @@
+@for $i from 1 through 4 {
+  .waves {
+    transform: rotate(180deg);
+    fill: var(--text-secondary);
+    width: 100%;
+    max-height: 4rem;
+
+    & use:nth-child(#{$i}) {
+      opacity: calc(#{$i} * 0.2);
+      animation: wavesMove calc(3s * #{$i}) linear infinite;
+    }
+  }
+}
+
+@keyframes wavesMove {
+  0% {
+    transform: translateX(85px);
+  }
+  100% {
+    transform: translateX(-90px);
+  }
+}
