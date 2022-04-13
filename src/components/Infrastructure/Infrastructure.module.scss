@@ -1,0 +1,21 @@
+.card {
+  position: relative;
+  width: 33.3%;
+  min-height: 7rem;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: var(--bg);
+  padding: 0.7rem;
+
+  &__description {
+    & > * {
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+  .description__title {
+    color: var(--bg);
+    font-size: 1.2rem;
+  }
+}

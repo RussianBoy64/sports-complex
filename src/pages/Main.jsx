@@ -1,4 +1,5 @@
 import React from 'react'
+import Infrastructure from '../components/Infrastructure/Infrastructure'
 import MainScreen from '../components/MainScreen/MainScreen'
 import PopularServices from '../components/UI/PopularServices/PopularServices'
 
@@ -7,6 +8,7 @@ function Main() {
     <>
       <MainScreen />
       <PopularServices />
+      <Infrastructure />
     </>
   )
 }
