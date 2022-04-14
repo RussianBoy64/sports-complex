@@ -1,21 +1,88 @@
 .card {
   position: relative;
-  width: 33.3%;
-  min-height: 7rem;
+  min-height: 12rem;
   border-radius: 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background: var(--bg);
-  padding: 0.7rem;
+  background: var(--bg) no-repeat center;
+  background-size: cover;
+  margin: 1.5rem 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
 
   &__description {
-    & > * {
-      &:not(:first-child) {
-        display: none;
+    position: absolute;
+    z-index: 10;
+    top: 0.7rem;
+    left: 0.7rem;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    width: 45%;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    transition: var(--transition);
+  }
+
+  .description {
+    &__title {
+      color: var(--bg);
+      font-size: 2rem;
+      margin-bottom: 0.7rem;
+      transition: var(--transition);
+    }
+
+    &__list {
+      color: var(--text-secondary);
+
+      & li {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: var(--transition);
+
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
       }
     }
   }
-  .description__title {
-    color: var(--bg);
-    font-size: 1.2rem;
+
+  &:hover {
+    &::after {
+      background: rgba(0, 0, 0, 0);
+    }
+    .card__description {
+      background: var(--bg);
+      box-shadow: rgba(100, 100, 111, 0.7) 0px 7px 29px 0px;
+    }
+
+    .description {
+      &__title {
+        font-size: 1.2rem;
+        color: var(--accient);
+      }
+
+      &__list {
+        opacity: 1;
+
+        li {
+          @for $i from 0 to 5 {
+            &:nth-child(#{$i + 1}) {
+              transition-delay: $i * 0.1 + 0.3s;
+              opacity: 1;
+              transform: none;
+            }
+          }
+        }
+      }
+    }
   }
 }

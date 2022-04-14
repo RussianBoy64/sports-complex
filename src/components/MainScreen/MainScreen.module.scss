@@ -3,6 +3,7 @@
   background-size: cover;
   position: relative;
   height: 23rem;
+  color: var(--bg);
 
   &::after {
     content: '';
@@ -16,10 +17,9 @@
     opacity: 0.5;
   }
 
-  color: var(--bg);
   &__header {
     position: relative;
-    z-index: 3;
+    z-index: 10;
     padding-top: 3rem;
     text-align: center;
   }
